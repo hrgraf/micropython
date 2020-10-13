@@ -45,6 +45,9 @@ const char mp_help_default_text[] =
 "  CTRL-E        -- on a blank line, enter paste mode\n"
 "\n"
 "For further help on a specific object, type help(obj)\n"
+#if MICROPY_PY_BUILTINS_HELP_MODULES // HRG
+"For a list of available modules, type help('modules')\n"
+#endif
 ;
 
 STATIC void mp_help_print_info_about_object(mp_obj_t name_o, mp_obj_t value) {

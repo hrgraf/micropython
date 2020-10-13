@@ -29,6 +29,9 @@ class LCD:
             for x in range(self.width):
                 self.buf1[y][x] = self.buf2[y][x] = value
 
+    def clear(self):
+        self.fill(0)
+
     def show(self):
         print('') # blank line to separate frames
         for y in range(self.height):
@@ -47,3 +50,6 @@ class LCD:
     def pixel(self, x, y, value):
         if 0 <= x < self.width and 0 <= y < self.height:
             self.buf2[y][x] = value
+
+    def set(self, x, y):
+        self.pixel(x, y, 48)
